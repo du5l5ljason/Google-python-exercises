@@ -5,11 +5,13 @@
 
 # File Name: main.py
 # Description: The main entrance of the test code.
-
 import sys
 import strTest1
 import strTest2
 import listTest1
+
+# These are not answers for the exercises.
+import sort_test
 
 # Define a main() function that handles all of the test code.
 def main():
@@ -24,6 +26,8 @@ def main():
             strTest2.runTest()
         elif sys.argv[1] == "list1":
             listTest1.runTest()
+        elif sys.argv[1] == "sort":
+            sort_test.runTest()
         else:
             print "No specific function!"
 

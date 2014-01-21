@@ -5,7 +5,7 @@
 
 # File Name: listTest1.py
 # Description: Function that runs string listTest1
-
+import utils
 # A. match_ends
 # Given a list of strings, return the count of the number of
 # strings where the string length is 2 or more and the first
@@ -110,56 +110,47 @@ def linear_merge(list1, list2):
 # Then use reversed() to put the result back in the correct order. That
 # solution works in linear time, but is more ugly.
 
-# Simple provided test() function used in main() to print
-# what each function returns vs. what it's supposed to return.
-def test(got, expected):
-  if got == expected:
-    prefix = ' OK '
-  else:
-    prefix = '  X '
-  print '%s got: %s expected: %s' % (prefix, repr(got), repr(expected))
-
-
 # Calls the above functions with interesting inputs.
 def runTest():
   print 'match_ends'
-  test(match_ends(['aba', 'xyz', 'aa', 'x', 'bbb']), 3)
-  test(match_ends(['', 'x', 'xy', 'xyx', 'xx']), 2)
-  test(match_ends(['aaa', 'be', 'abc', 'hello']), 1)
+  utils.test(match_ends(['aba', 'xyz', 'aa', 'x', 'bbb']), 3)
+  utils.test(match_ends(['', 'x', 'xy', 'xyx', 'xx']), 2)
+  utils.test(match_ends(['aaa', 'be', 'abc', 'hello']), 1)
 
   print
   print 'front_x'
-  test(front_x(['bbb', 'ccc', 'axx', 'xzz', 'xaa']),
+  utils.test(front_x(['bbb', 'ccc', 'axx', 'xzz', 'xaa']),
        ['xaa', 'xzz', 'axx', 'bbb', 'ccc'])
-  test(front_x(['ccc', 'bbb', 'aaa', 'xcc', 'xaa']),
+  utils.test(front_x(['ccc', 'bbb', 'aaa', 'xcc', 'xaa']),
        ['xaa', 'xcc', 'aaa', 'bbb', 'ccc'])
-  test(front_x(['mix', 'xyz', 'apple', 'xanadu', 'aardvark']),
+  utils.test(front_x(['mix', 'xyz', 'apple', 'xanadu', 'aardvark']),
        ['xanadu', 'xyz', 'aardvark', 'apple', 'mix'])
 
   print
   print 'sort_last'
-  test(sort_last([(1, 3), (3, 2), (2, 1)]),
+  utils.test(sort_last([(1, 3), (3, 2), (2, 1)]),
   [(2, 1), (3, 2), (1, 3)])
-  test(sort_last([(2, 3), (1, 2), (3, 1)]),
+  utils.test(sort_last([(2, 3), (1, 2), (3, 1)]),
   [(3, 1), (1, 2), (2, 3)])
-  test(sort_last([(1, 7), (1, 3), (3, 4, 5), (2, 2)]),
+  utils.test(sort_last([(1, 7), (1, 3), (3, 4, 5), (2, 2)]),
   [(2, 2), (1, 3), (3, 4, 5), (1, 7)])
 
   print
   print 'remove_adjacent'
-  test(remove_adjacent([1, 2, 2, 3]), [1, 2, 3])
-  test(remove_adjacent([2, 2, 3, 3, 3]), [2, 3])
-  test(remove_adjacent([]), [])
+  utils.test(remove_adjacent([1, 2, 2, 3]), [1, 2, 3])
+  utils.test(remove_adjacent([2, 2, 3, 3, 3]), [2, 3])
+  utils.test(remove_adjacent([]), [])
 
   print
   print 'linear_merge'
-  test(linear_merge(['aa', 'xx', 'zz'], ['bb', 'cc']),
+  utils.test(linear_merge(['aa', 'xx', 'zz'], ['bb', 'cc']),
        ['aa', 'bb', 'cc', 'xx', 'zz'])
-  test(linear_merge(['aa', 'xx'], ['bb', 'cc', 'zz']),
+  utils.test(linear_merge(['aa', 'xx'], ['bb', 'cc', 'zz']),
        ['aa', 'bb', 'cc', 'xx', 'zz'])
-  test(linear_merge(['aa', 'aa'], ['aa', 'bb', 'bb']),
+  utils.test(linear_merge(['aa', 'aa'], ['aa', 'bb', 'bb']),
        ['aa', 'aa', 'aa', 'bb', 'bb'])
 
 if __name__ == '__main__':
   runTest()
+
 # End of listTest1.py

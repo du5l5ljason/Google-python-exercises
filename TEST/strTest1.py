@@ -14,7 +14,7 @@
 # which is just a placeholder for your code.
 # It's ok if you do not complete all the functions, and there
 # are some additional functions to try in string2.py.
-
+import utils
 
 # A. donuts
 # Given an int count of a number of donuts, return a string
@@ -72,47 +72,37 @@ def mix_up(a, b):
   result = ''.join([b[:2], a[2:], ' ', a[:2], b[2:]])
   return result
 
-
-# Provided simple test() function used in main() to print
-# what each function returns vs. what it's supposed to return.
-def test(got, expected):
-  if got == expected:
-    prefix = ' OK '
-  else:
-    prefix = '  X '
-  print '%s got: %s expected: %s' % (prefix, repr(got), repr(expected))
-
-
 def runTest():
   print 'donuts'
   # Each line calls donuts, compares its result to the expected for that call.
-  test(donuts(4), 'Number of donuts: 4')
-  test(donuts(9), 'Number of donuts: 9')
-  test(donuts(10), 'Number of donuts: many')
-  test(donuts(99), 'Number of donuts: many')
+  utils.test(donuts(4), 'Number of donuts: 4')
+  utils.test(donuts(9), 'Number of donuts: 9')
+  utils.test(donuts(10), 'Number of donuts: many')
+  utils.test(donuts(99), 'Number of donuts: many')
 
   print
   print 'both_ends'
-  test(both_ends('spring'), 'spng')
-  test(both_ends('Hello'), 'Helo')
-  test(both_ends('a'), '')
-  test(both_ends('xyz'), 'xyyz')
+  utils.test(both_ends('spring'), 'spng')
+  utils.test(both_ends('Hello'), 'Helo')
+  utils.test(both_ends('a'), '')
+  utils.test(both_ends('xyz'), 'xyyz')
 
 
   print
   print 'fix_start'
-  test(fix_start('babble'), 'ba**le')
-  test(fix_start('aardvark'), 'a*rdv*rk')
-  test(fix_start('google'), 'goo*le')
-  test(fix_start('donut'), 'donut')
+  utils.test(fix_start('babble'), 'ba**le')
+  utils.test(fix_start('aardvark'), 'a*rdv*rk')
+  utils.test(fix_start('google'), 'goo*le')
+  utils.test(fix_start('donut'), 'donut')
 
   print
   print 'mix_up'
-  test(mix_up('mix', 'pod'), 'pox mid')
-  test(mix_up('dog', 'dinner'), 'dig donner')
-  test(mix_up('gnash', 'sport'), 'spash gnort')
-  test(mix_up('pezzy', 'firm'), 'fizzy perm')
+  utils.test(mix_up('mix', 'pod'), 'pox mid')
+  utils.test(mix_up('dog', 'dinner'), 'dig donner')
+  utils.test(mix_up('gnash', 'sport'), 'spash gnort')
+  utils.test(mix_up('pezzy', 'firm'), 'fizzy perm')
 
 if __name__ == '__main__':
   runTest()
+
 # End of strTest1.py

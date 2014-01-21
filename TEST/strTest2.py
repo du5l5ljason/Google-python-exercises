@@ -5,7 +5,7 @@
 
 # File Name: strTest2.py
 # Description: Function that runs string Test 2
-# End of strTest2.py
+import utils
 
 # D. verbing
 # Given a string, if its length is at least 3,
@@ -74,36 +74,28 @@ def front_back(a, b):
   tuple_b = split_halves(b)
   return ''.join([tuple_a[0], tuple_b[0], tuple_a[1], tuple_b[1]])
 
-  # Simple provided test() function used in main() to print
-# what each function returns vs. what it's supposed to return.
-def test(got, expected):
-  if got == expected:
-    prefix = ' OK '
-  else:
-    prefix = '  X '
-  print '%s got: %s expected: %s' % (prefix, repr(got), repr(expected))
-
-
 # runTest() calls the above functions with interesting inputs,
 # using the above test() to check if the result is correct or not.
 def runTest():
   print 'verbing'
-  test(verbing('hail'), 'hailing')
-  test(verbing('swiming'), 'swimingly')
-  test(verbing('do'), 'do')
+  utils.test(verbing('hail'), 'hailing')
+  utils.test(verbing('swiming'), 'swimingly')
+  utils.test(verbing('do'), 'do')
 
   print
   print 'not_bad'
-  test(not_bad('This movie is not so bad'), 'This movie is good')
-  test(not_bad('This dinner is not that bad!'), 'This dinner is good!')
-  test(not_bad('This tea is not hot'), 'This tea is not hot')
-  test(not_bad("It's bad yet not"), "It's bad yet not")
+  utils.test(not_bad('This movie is not so bad'), 'This movie is good')
+  utils.test(not_bad('This dinner is not that bad!'), 'This dinner is good!')
+  utils.test(not_bad('This tea is not hot'), 'This tea is not hot')
+  utils.test(not_bad("It's bad yet not"), "It's bad yet not")
 
   print
   print 'front_back'
-  test(front_back('abcd', 'xy'), 'abxcdy')
-  test(front_back('abcde', 'xyz'), 'abcxydez')
-  test(front_back('Kitten', 'Donut'), 'KitDontenut')
+  utils.test(front_back('abcd', 'xy'), 'abxcdy')
+  utils.test(front_back('abcde', 'xyz'), 'abcxydez')
+  utils.test(front_back('Kitten', 'Donut'), 'KitDontenut')
 
 if __name__ == '__main__':
   runTest()
+
+# End of strTest2.py
