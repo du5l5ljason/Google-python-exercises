@@ -113,4 +113,6 @@ def runTest():
   test(mix_up('gnash', 'sport'), 'spash gnort')
   test(mix_up('pezzy', 'firm'), 'fizzy perm')
 
+if __name__ == '__main__':
+  runTest()
 # End of strTest1.py

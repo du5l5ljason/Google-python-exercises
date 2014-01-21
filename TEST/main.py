@@ -9,6 +9,7 @@
 import sys
 import strTest1
 import strTest2
+import listTest1
 
 # Define a main() function that handles all of the test code.
 def main():
@@ -21,6 +22,8 @@ def main():
             strTest1.runTest()
         elif sys.argv[1] == "str2":
             strTest2.runTest()
+        elif sys.argv[1] == "list1":
+            listTest1.runTest()
         else:
             print "No specific function!"
 
